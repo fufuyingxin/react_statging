@@ -25,7 +25,7 @@ export default class Item extends Component {
 
     // 点击删除按钮的回调
     handleDelete = (id) => {
-        if(window.confirm('确定删除吗？')){
+        if (window.confirm('确定删除吗？')) {
             this.props.deleteTodo(id);
         }
     }
@@ -36,7 +36,7 @@ export default class Item extends Component {
         return (
             <li style={{ backgroundColor: mouse ? '#ddd' : 'white' }} onMouseEnter={this.handleMosue(true)} onMouseLeave={this.handleMosue(false)}>
                 <label>
-                    <input type="checkbox" defaultChecked={done} onChange={this.handleChecked(id)} />
+                    <input type="checkbox" checked={done} onChange={this.handleChecked(id)} />
                     <span>{name}</span>
                 </label>
                 <button onClick={() => this.handleDelete(id)} className="btn btn-danger" style={{ display: mouse ? 'block' : 'none' }}>删除</button>
